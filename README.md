@@ -42,6 +42,29 @@ Note: The reason why I wrote my own library is because the existing ones are NOT
  // Reset internal state
  trapezoidalProfile->reset();
  ``` 
+```python
+from motion_generator import MotionGenerator
+
+# Define the MotionGenerator object
+trapezoidal_profile = MotionGenerator(200, 500, 0)
+
+# Retrieve calculated position
+position_ref = 100
+position = trapezoidal_profile.update(position_ref)
+
+# Retrieve current velocity
+velocity = trapezoidal_profile.velocity()
+
+# Retrieve current acceleration
+acceleration = trapezoidal_profile.acceleration()
+
+# Check if profile is finished
+if trapezoidal_profile.finished():
+    pass
+
+# Reset internal state
+trapezoidal_profile.reset()
+```
 ## Example plot
 ### Trapezoidal motion generator
 ![Simulation of a trapezoidal motion profile](https://github.com/EFeru/MotionGenerator/blob/main/matlab/simPhoto.png)
